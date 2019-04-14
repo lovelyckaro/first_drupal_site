@@ -9,7 +9,7 @@ services:
   db:
     image: osiolabs/drupaldevwithdocker-mysql:10.0
     volumes:
-      - ./db-backups:/var/mysql/backups:delegated
+      - first_drupal_site_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: drupaldb
@@ -27,3 +27,5 @@ services:
       PHP_MAX_INPUT_VARS: 1G
     ports:
       - "8001:80"
+volumes:
+  first_drupal_site_data:
