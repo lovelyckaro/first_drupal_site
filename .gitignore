@@ -4,6 +4,8 @@ src/sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 src/sites/*/files
 src/sites/*/private
+src/sites/default/default.settings.php
+src/sites/default/.gitignore
 
 .directory
 */.directory
