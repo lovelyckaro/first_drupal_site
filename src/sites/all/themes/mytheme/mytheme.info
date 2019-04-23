@@ -1,0 +1,6 @@
+name = My Theme
+description = My first test theme
+core = 7.x
+
+stylesheets[all][] = bootstrap-4.3.1-dist/css/bootstrap.css
+scripts[] = bootstrap-4.3.1-dist/js/bootstrap.js
