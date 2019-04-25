@@ -1,41 +1,46 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+<nav class="navbar bg-light border-bottom">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <?php if ($logo): ?>
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                </a>
+            <?php endif; ?>
         </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+        <?php if($main_menu): ?>
+            <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array( 'inline', 'navbar-nav')))); ?>
+        <?php endif;?>
+    </div>
 </nav>
 
-<main role="main" class="container">
-
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
-
-</main><!-- /.container -->
+<div class="container">    
+    <div class="row">
+        <div id="content" class="col">
+            <div class="section">
+                <!-- <a id="main-content"></a> --> 
+                <?php print render($title_prefix); ?>
+                <?php if ($title): ?>
+                    <h1 class="title" id="page-title">
+                        <?php print $title; ?>
+                    </h1>
+                <?php endif; ?>
+                <?php print render($title_suffix); ?>
+                <?php if ($tabs): ?>
+                    <div class="tabs">
+                        <?php print render($tabs); ?>
+                    </div
+                <?php endif; ?>
+                <?php if ($action_links): ?>
+                    <ul class="action-links">
+                        <?php print render($action_links); ?>
+                    </ul>
+                <?php endif; ?>
+                <?php print render($page['content']); ?>
+                <?php print $feed_icons; ?>
+        </div>
+        <div id="sidebar" class="col-4">
+            <?php print render($page['sidebar']); ?>
+        </div>
+    </div>
+</div>
