@@ -2,5 +2,14 @@ name = My Theme
 description = My first test theme
 core = 7.x
 
+; CSS
 stylesheets[all][] = bootstrap-4.3.1-dist/css/bootstrap.css
-scripts[] = bootstrap-4.3.1-dist/js/bootstrap.js
+
+; Scripts
+scripts[] = bootstrap-4.3.1-dist/js/bootstrap.bundle.js
+scripts[] = js/jquery-3.4.0.js
+
+; Regions
+regions[content] = Content
+regions[sidebar] = Side bar
+;regions[topbar] = Top bar
