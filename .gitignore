@@ -10,3 +10,5 @@ src/sites/default/.gitignore
 .directory
 */.directory
 db-backups/*
+
+src/sites/all/modules/*.tar.gz
