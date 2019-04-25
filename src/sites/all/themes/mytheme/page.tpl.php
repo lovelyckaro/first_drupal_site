@@ -1,5 +1,5 @@
 
-<nav class="navbar bg-light border-bottom">
+<nav class="navbar navbar-expand-md bg-light border-bottom mb-5">
     <div class="container-fluid">
         <div class="navbar-brand">
             <?php if ($logo): ?>
@@ -16,20 +16,19 @@
 
 <div class="container">    
     <div class="row">
-        <div id="content" class="col">
-            <div class="section">
-                <!-- <a id="main-content"></a> --> 
+        <div id="content" class="col-8">
+            <div class="section"> 
                 <?php print render($title_prefix); ?>
                 <?php if ($title): ?>
                     <h1 class="title" id="page-title">
-                        <?php print $title; ?>
+                        <?php //print $title; ?>
                     </h1>
                 <?php endif; ?>
                 <?php print render($title_suffix); ?>
                 <?php if ($tabs): ?>
                     <div class="tabs">
                         <?php print render($tabs); ?>
-                    </div
+                    </div>
                 <?php endif; ?>
                 <?php if ($action_links): ?>
                     <ul class="action-links">
@@ -38,6 +37,7 @@
                 <?php endif; ?>
                 <?php print render($page['content']); ?>
                 <?php print $feed_icons; ?>
+            </div>
         </div>
         <div id="sidebar" class="col-4">
             <?php print render($page['sidebar']); ?>
