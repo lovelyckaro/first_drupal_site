@@ -76,11 +76,6 @@
 
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix mb-5"<?php print $attributes; ?>>
-    <div class="row">
-        <div class="col">
-            <h3 <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title;?></a></h3>
-        </div>
-    </div>
     <div class="row clearfix">
         <div class="col mb-2">
             <span class="float-left"><?php print render($content['field_date']);?></span>
