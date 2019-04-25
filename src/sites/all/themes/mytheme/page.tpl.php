@@ -4,7 +4,7 @@
         <div class="navbar-brand">
             <?php if ($logo): ?>
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" width="50" height="50" />
                 </a>
             <?php endif; ?>
         </div>
@@ -20,8 +20,8 @@
             <div class="section"> 
                 <?php print render($title_prefix); ?>
                 <?php if ($title): ?>
-                    <h1 class="title" id="page-title">
-                        <?php //print $title; ?>
+                    <h1 class="title mb-5" id="page-title">
+                        <?php print $title; ?>
                     </h1>
                 <?php endif; ?>
                 <?php print render($title_suffix); ?>
